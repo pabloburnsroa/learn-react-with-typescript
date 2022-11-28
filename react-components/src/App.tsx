@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TestComponent from './EvenMoreReactComponent';
 
 function List<ListItem>({
   items,
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <div className="App">
+      <TestComponent />
       <List items={pokemon} render={(item: Pokemon) => item.name.english} />
     </div>
   );

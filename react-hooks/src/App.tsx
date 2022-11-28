@@ -5,6 +5,7 @@ import UseEffectComponent from './useEffectComponent';
 import UseContextComponent from './UseContextComponent';
 import UseReducerComponent from './UseReducerComponent';
 import UseRefComponent from './UseRefComponent';
+import CustomHookComponent from './CustomHookComponent';
 
 function App() {
   return (
@@ -12,52 +13,74 @@ function App() {
       <header className="App-header">
         <div
           style={{
-            backgroundColor: 'yellow',
-            padding: '40px',
-            margin: '10px',
-            color: 'black',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3,1fr)',
           }}
         >
-          <h1>useReducer</h1>
-          <UseReducerComponent />
-        </div>
-        <div
-          style={{ backgroundColor: 'red', padding: '40px', margin: '10px' }}
-        >
-          <h1>useContext</h1>
-          <UseContextComponent />
-        </div>
-        <div
-          style={{
-            backgroundColor: 'darkblue',
-            padding: '40px',
-            margin: '10px',
-          }}
-        >
-          <h1>useState</h1>
-          <UseStateComponent />
-        </div>
-        <div
-          style={{ backgroundColor: 'green', padding: '40px', margin: '10px' }}
-        >
-          <h1>useEffect</h1>
-          <UseEffectComponent />
-        </div>
-        <div
-          style={{
-            backgroundColor: 'yellow',
-            padding: '40px',
-            margin: '10px',
-            color: 'black',
-          }}
-        >
-          <h1>useRef</h1>
-          <span style={{ marginRight: '5px' }}>input</span>
-          <UseRefComponent />
+          <div
+            style={{
+              backgroundColor: 'yellow',
+              padding: '40px',
+              margin: '10px',
+              color: 'black',
+            }}
+          >
+            <h1>useReducer</h1>
+            <UseReducerComponent />
+          </div>
+          <div
+            style={{ backgroundColor: 'red', padding: '40px', margin: '10px' }}
+          >
+            <h1>useContext</h1>
+            <UseContextComponent />
+          </div>
+          <div
+            style={{
+              backgroundColor: 'darkblue',
+              padding: '40px',
+              margin: '10px',
+            }}
+          >
+            <h1>useState</h1>
+            <UseStateComponent />
+          </div>
+          <div
+            style={{
+              backgroundColor: 'green',
+              padding: '40px',
+              margin: '10px',
+            }}
+          >
+            <h1>useEffect</h1>
+            <UseEffectComponent />
+          </div>
+          <div
+            style={{
+              backgroundColor: 'yellow',
+              padding: '40px',
+              margin: '10px',
+              color: 'black',
+            }}
+          >
+            <h1>useRef</h1>
+            <span style={{ marginRight: '5px' }}>input</span>
+            <UseRefComponent />
+          </div>
+          <div
+            style={{
+              backgroundColor: 'lightblue',
+              padding: '40px',
+              margin: '10px',
+              color: 'black',
+            }}
+          >
+            <h1>useCustomHook</h1>
+            <CustomHookComponent />
+          </div>
         </div>
       </header>
     </div>
-  ); 
+  );
 }
 
 export default App;
