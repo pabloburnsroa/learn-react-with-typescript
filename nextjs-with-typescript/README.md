@@ -1,3 +1,58 @@
+# Building a todo application using NEXT.JS and TypeScript
+
+[January 2023]
+
+## Pages
+
+A page is a react component in the pages directory. Each page is associated with a route based on its file name.
+
+## App Directory vs Pages
+
+The app directory supports nested routes and layouts.
+Pages in the app directory are server components by default but in the pages directory they are client components.
+
+## Migrating to using the app directory.
+
+1. Make sure next.config.js file includes...
+
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+};
+
+module.exports = nextConfig;
+
+```
+
+2. Create a root layout that will be applied to all routes inside the app directory. This will replace the pages/\_app.tsx and pages/\_document.tsx
+
+```
+export default function RootLayout({
+  // Layouts must accept a children prop.
+  // This will be populated with nested layouts or pages
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+3. A head.js file can be used to manage `<head>` HTML elements.
+4. app/page.tsx replaces pages/index.tsx as the / route. Pages in the app dir are Server Components by default which is different from the pages dir where they are Client Components.
+5. To define client components we can add the 'use client' directive at the top of the file(before imports)
+
+### Fetching todos from an API
+
+
+<!--
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,3 +89,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+-->
